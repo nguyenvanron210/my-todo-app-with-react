@@ -28,39 +28,48 @@
   color: #fff;
   text-align: 260px;
   margin: 30px 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .task-input {
-  outline: none;
-  outline-color: none;
-  width: 260px;
+  width: 300px;
   padding: 15px;
-  font-size: 20px;
-  color: #000;
-  background-color: #ccc;
-  border: 1px solid #c89666;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 100px;
+  background-color: #ccc !important;
   border-radius: 10px;
 }
 
+/* .label {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+} */
+
+.task-input .MuiFormLabel-root.MuiFormLabel-colorPrimary.Mui-focused {
+  /* color: #891515; */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 .button-add {
-  width: 70px;
-  padding: 15px 15px;
+  width: 80px;
+  padding: 17px 15px;
   font-size: 20px;
   border-radius: 10px;
   border: 0;
-  background-color: #f1af71;
+  background-color: #128f10e8;
   cursor: pointer;
   margin-left: 15px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #ccc;
 }
 
 .list-item {
   display: flex;
   margin: 20px 0;
-  border: 1px solid red;
-  border-radius: 10px;
-  padding: 10px;
+  padding: 15px;
   max-height: 30px;
   justify-content: space-around;
+  border: 1px solid #c89666;
+  border-radius: 10px;
 }
 
 .button-complete,
@@ -70,13 +79,16 @@
   outline: none;
   cursor: pointer;
   background-color: transparent;
-  font-size: 28px;
+  font-size: 25px;
   border-radius: 50%;
 }
 
 .button-complete {
-  color: #ff6c6c;
+  color: #ccc;
   margin-right: 10px;
+  :hover {
+    color: green;
+  }
 }
 
 .button-edit {
@@ -84,15 +96,19 @@
   margin-right: 10px;
 }
 
+.button-edit:focus {
+  cursor: pointer;
+}
+
 .button-delete {
-  color: lightseagreen;
+  color: red;
 }
 
 .complete {
   text-decoration-style: solid;
   text-decoration-line: line-through;
-  text-decoration-color: #ff6c6c;
-  opacity: 0.6;
+  text-decoration-color: red;
+  opacity: 0.7;
 }
 
 .list {
@@ -100,9 +116,10 @@
   background-color: #12343b;
   border: none;
   color: #ccc;
-  font-size: 20px;
-  padding-left: 10px;
-  margin-right: 15px;
+  font-size: 17px;
+  /* padding-left: 10px; */
+  margin-right: 0px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /* .complete {

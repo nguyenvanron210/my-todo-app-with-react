@@ -1,17 +1,19 @@
 import React from "react";
 const TodosList = ({ todos, setTodos, setEditTodo }) => {
+  // handleComplete: kiểm tra trạng thái đã được của todos
   const handleComplete = (todo) => {
     setTodos(
       todos.map((item) => {
         if (item.id === todo.id) {
           return { ...item, completed: !item.completed };
+          
         }
         return item;
       })
     );
   };
 
-  const handleEdit = ({id}) => {
+  const handleEdit = ({ id }) => {
     const findTodo = todos.find((todo) => todo.id === id);
     setEditTodo(findTodo);
   };
@@ -26,8 +28,10 @@ const TodosList = ({ todos, setTodos, setEditTodo }) => {
           <input
             type="text"
             value={todo.title}
+            disabled
             className={`list ${todo.completed ? "complete" : ""}`}
             onChange={(event) => event.preventDefault()}
+        
           />
           <div>
             <button
@@ -36,8 +40,9 @@ const TodosList = ({ todos, setTodos, setEditTodo }) => {
             >
               <i className="fa fa-check-circle"></i>
             </button>
-            <button className="button-edit task-button"
-                onClick={() => handleEdit(todo)}
+            <button
+              className="button-edit task-button"
+              onClick={() => handleEdit(todo)}
             >
               <i className="fa fa-edit"></i>
             </button>

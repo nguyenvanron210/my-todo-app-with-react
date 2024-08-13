@@ -1,10 +1,18 @@
 import React, { useEffect } from "react";
+// add link framework fake id
 import { v4 as uuidv4 } from "uuid";
 // add link framework Material UI
 import TextField from "@mui/material/TextField";
+// add link framework Toast
 
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
 const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
+  // Sử dụng todos.map để duyệt qua từng công việc trong danh sách todos.
+  // Kiểm tra điều kiện todo.id === id: Nếu ID của công việc hiện tại trùng với ID được cung cấp, thì tạo ra một đối tượng mới với các thuộc tính title, id, completed được cập nhật theo tham số. Ngược lại, giữ nguyên công việc hiện tại.
+  // Gán mảng newTodo chứa các công việc đã được cập nhật hoặc giữ nguyên cho biến todos bằng setTodos.
+  // Xóa bỏ thông tin công việc đang được chỉnh sửa bằng setEditTodo("").
   const updateTodo = (title, id, completed) => {
     const newTodo = todos.map((todo) =>
       todo.id === id ? { title, id, completed } : todo
@@ -13,7 +21,12 @@ const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
     setEditTodo("");
   };
 
-  // Lưu giá trị mỗi khi update và trả về value = ""
+  // useEffect: Hook trong React để thực hiện các tác dụng phụ sau khi render component.
+  // Dependency array: Mảng này xác định các biến mà useEffect phụ thuộc vào. Khi một trong các biến này thay đổi, useEffect sẽ được gọi lại. [setInput, editTodo]
+  // Logic bên trong useEffect:
+  // Kiểm tra điều kiện editTodo:
+  // Nếu editTodo có giá trị (nghĩa là đang chỉnh sửa một công việc), thì gán giá trị title của editTodo cho biến input bằng hàm setInput.
+  // Nếu editTodo không có giá trị (không đang chỉnh sửa công việc), thì gán giá trị rỗng cho biến input bằng hàm setInput.
   useEffect(() => {
     if (editTodo) {
       setInput(editTodo.title);
@@ -37,9 +50,10 @@ const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
   };
   return (
     <form onSubmit={onFormSubmit}>
+      {/* Animation Input || Material UI */}
       <TextField
         id="filled-basic"
-        label="Enter code todo"
+        label="Enter a todo ..."
         variant="filled"
         type="text"
         className="task-input"
@@ -47,9 +61,10 @@ const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
         required
         onChange={onInputChange}
       />
+
       <button className="button-add" type="submit">
         {/* Nếu update: OK || Bình thường: Add */}
-        {editTodo ? "OK" : "Add"}
+        <h4>{editTodo ? "OK" : "Add"} </h4>
       </button>
     </form>
   );
