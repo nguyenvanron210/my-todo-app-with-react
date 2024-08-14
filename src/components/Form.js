@@ -12,8 +12,7 @@ const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
   const customId = "custom-id-yes";
 
   const notify = () => {
-    if (!setTodos.id) {
-      toast.success("Update todo success", {
+      toast.success("Success", {
         position: "top-right",
         autoClose: 1500,
         hideProgressBar: false,
@@ -25,20 +24,6 @@ const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
         transition: Bounce,
         toastId: customId,
       });
-    } else {
-      toast.success("Add todo success", {
-        position: "top-right",
-        autoClose: 1500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
-        toastId: customId,
-      });
-    }
   };
 
   // Sử dụng todos.map để duyệt qua từng công việc trong danh sách todos.
