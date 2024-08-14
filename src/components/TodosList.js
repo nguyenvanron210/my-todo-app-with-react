@@ -4,7 +4,6 @@ import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const TodosList = ({ todos, setTodos, setEditTodo }) => {
-
   const notify_delete = () => {
     toast.success("Detele todo success", {
       position: "top-right",
@@ -49,7 +48,7 @@ const TodosList = ({ todos, setTodos, setEditTodo }) => {
             className={`list ${todo.completed ? "complete" : ""}`}
             onChange={(event) => event.preventDefault()}
           />
-          <div >
+          <div>
             <button
               className="button-complete task-button"
               onClick={() => handleComplete(todo)}
