@@ -4,11 +4,43 @@ import { v4 as uuidv4 } from "uuid";
 // add link framework Material UI
 import TextField from "@mui/material/TextField";
 // add link framework Toast
-
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+import { Bounce, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
+  // Ngăn chặn trùng lặp
+  const customId = "custom-id-yes";
+
+  const notify = () => {
+    if (!setTodos.id) {
+      toast.success("Update todo success", {
+        position: "top-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        toastId: customId,
+      });
+    } else {
+      toast.success("Add todo success", {
+        position: "top-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        toastId: customId,
+      });
+    }
+  };
+
   // Sử dụng todos.map để duyệt qua từng công việc trong danh sách todos.
   // Kiểm tra điều kiện todo.id === id: Nếu ID của công việc hiện tại trùng với ID được cung cấp, thì tạo ra một đối tượng mới với các thuộc tính title, id, completed được cập nhật theo tham số. Ngược lại, giữ nguyên công việc hiện tại.
   // Gán mảng newTodo chứa các công việc đã được cập nhật hoặc giữ nguyên cho biến todos bằng setTodos.
@@ -48,6 +80,7 @@ const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
       updateTodo(input, editTodo.id, editTodo.completed);
     }
   };
+
   return (
     <form onSubmit={onFormSubmit}>
       {/* Animation Input || Material UI */}
@@ -62,10 +95,11 @@ const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
         onChange={onInputChange}
       />
 
-      <button className="button-add" type="submit">
+      <button className="button-add" type="submit" onClick={notify}>
         {/* Nếu update: OK || Bình thường: Add */}
         <h4>{editTodo ? "OK" : "Add"} </h4>
       </button>
+      <ToastContainer />
     </form>
   );
 };

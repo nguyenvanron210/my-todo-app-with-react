@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+
 }
 
 .container {
@@ -15,13 +16,16 @@
 .app-wrapper {
   background-color: #12343b;
   min-width: 450px;
+  max-height: 650px;
   min-height: 650px;
   text-align: center;
   padding: 30px;
+  padding-top: 7px;
   box-sizing: border-box;
   border-radius: 20px;
   box-shadow: 6px 6px 60px #000;
   margin-bottom: 10px;
+
 }
 
 .header h1 {
@@ -31,6 +35,30 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+/* ------Thanh Scroll------- */
+.div_form_scroll {
+  width: 395px;
+  height: 402px;
+  overflow-y: scroll;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff8a00), to(#da1b60));
+}
+
+::-webkit-scrollbar-track {
+  background-color: #12343b;
+}
+
+/* ------------ */
+
 .task-input {
   width: 300px;
   padding: 15px;
@@ -38,16 +66,9 @@
   font-size: 100px;
   background-color: #ccc !important;
   border-radius: 10px;
+  overflow-y: auto;
 }
 
-/* .label {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-} */
-
-.task-input .MuiFormLabel-root.MuiFormLabel-colorPrimary.Mui-focused {
-  /* color: #891515; */
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
 
 .button-add {
   width: 80px;
@@ -64,12 +85,13 @@
 
 .list-item {
   display: flex;
-  margin: 20px 0;
+  margin-bottom: 20px;
   padding: 15px;
   max-height: 30px;
   justify-content: space-around;
   border: 1px solid #c89666;
   border-radius: 10px;
+  margin-right: 5px;
 }
 
 .button-complete,
@@ -86,6 +108,7 @@
 .button-complete {
   color: #ccc;
   margin-right: 10px;
+
   :hover {
     color: green;
   }
@@ -103,6 +126,8 @@
 .button-delete {
   color: red;
 }
+
+
 
 .complete {
   text-decoration-style: solid;

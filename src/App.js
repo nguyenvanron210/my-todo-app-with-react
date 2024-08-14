@@ -53,7 +53,7 @@ const App = () => {
         </div>
 
         {/* Add file TodosList from components/TodosList.js */}
-        <div>
+        <div className="div_form_scroll">
           <TodosList
             // todos: Một mảng chứa các công việc (todo).
             // setTodos: Một hàm để cập nhật mảng todos.
