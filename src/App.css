@@ -5,12 +5,15 @@
 }
 
 .container {
-  background: linear-gradient(to right bottom, #e1b382, #c89666);
   width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url('./2c845a66b8ad2a8aafd288bdc16cd459.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .app-wrapper {
@@ -59,6 +62,9 @@
 
 /* ------------ */
 
+.form_w395{
+  width: 395px;
+}
 .task-input {
   width: 300px;
   padding: 15px;
@@ -66,7 +72,6 @@
   font-size: 100px;
   background-color: #ccc !important;
   border-radius: 10px;
-  overflow-y: auto;
 }
 
 
@@ -91,7 +96,7 @@
   justify-content: space-around;
   border: 1px solid #c89666;
   border-radius: 10px;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .button-complete,

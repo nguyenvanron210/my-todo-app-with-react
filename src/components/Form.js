@@ -82,7 +82,7 @@ const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
+    <form className="form_w395" onSubmit={onFormSubmit}>
       {/* Animation Input || Material UI */}
       <TextField
         id="filled-basic"
